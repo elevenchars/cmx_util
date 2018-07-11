@@ -2,21 +2,27 @@
 class CMXRequest {
     private $config;
     private $ip;
+    private $response;
 
     public function __construct($config_path, $ip) {
         $this->config = json_decode(file_get_contents($config_path), true);
         $this->ip = $ip;
+        $this->send();
     }
 
     public function getIP() {
         return $this->ip;
     }
 
+    public function getResponse() {
+        return $this->response;
+    }
+
     private function basic() {
         return "Basic " . base64_encode($this->config["username"] . ":" . $this->config["password"]);
     }
 
-    public function send() {
+    private function send() {
         $ch = curl_init();
         $query = http_build_query([
             "ipAddress" => $this->ip
@@ -30,6 +36,6 @@ class CMXRequest {
 
         $resp = curl_exec($ch);
         curl_close($ch);
-        return json_decode($resp, true);
+        $this->response = json_decode($resp, true);
     }
 }
