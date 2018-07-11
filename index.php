@@ -1,5 +1,11 @@
+<form action="index.php" method="post">
+IP Address: <input type="text" name="ip"><br>
+<input type="submit" value="Submit">
+</form>
+
 <?php
 include("cmx_util.php");
-
-$req = new CMXRequest("config.json", "youriphere");
-echo var_dump($req->getResponse());
+if($_POST) {
+    $req = new CMXRequest("config.json", $_POST["ip"]);
+    echo "<pre>" . json_encode($req->getResponse(), JSON_PRETTY_PRINT) . "</pre>";
+}
