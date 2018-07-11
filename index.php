@@ -1,10 +1,5 @@
 <?php
 include("cmx_util.php");
-// include("chuck.php");
 
-$req = new CMXRequest("config.json", "10.21.45.118");
+$req = new CMXRequest("config.json", "youriphere");
 echo var_dump($req->getResponse());
-
-// $test = new CMXRequest("config.json", "myIP");
-// echo $test->getIP() . "<br>";
-// echo $test->send();
