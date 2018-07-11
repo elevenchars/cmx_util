@@ -18,10 +18,12 @@ class CMXRequest {
         return $this->response;
     }
 
+    // format username and password according to https://tools.ietf.org/html/rfc7617
     private function basic() {
         return "Basic " . base64_encode($this->config["username"] . ":" . $this->config["password"]);
     }
 
+    // send http request to cmx server
     private function send() {
         $ch = curl_init();
         $query = http_build_query([
