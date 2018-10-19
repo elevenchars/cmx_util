@@ -1,4 +1,4 @@
-# CMX_Util
+# cmx_util
 
 PHP utility for use on the UTD Constellation project.
 
@@ -9,7 +9,7 @@ PHP utility for use on the UTD Constellation project.
 A quick introduction of the minimal setup you need to get a hello world up &
 running.
 
-###config.json
+### config.json
 ```json
 {
     "username" : "",
@@ -38,6 +38,7 @@ CMXUtil abstracts the request to the CMX proxy away from the core Constellation 
 ## Configuration
 
 All configuration for CMXUtil is done in a configuration JSON file with the following parameters.
+
 | Key | Value |
 | --- | ----- |
 | username | Username for the CMX Proxy |
