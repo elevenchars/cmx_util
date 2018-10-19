@@ -6,9 +6,6 @@ PHP utility for use on the UTD Constellation project.
 
 ## Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up &
-running.
-
 ### config.json
 ```json
 {
@@ -19,6 +16,7 @@ running.
 }
 ```
 
+### hello.php
 ```php
 require_once("cmx_util.php");
 $myNewRequest = new CMXRequest("config.json", ip);
@@ -37,7 +35,7 @@ CMXUtil abstracts the request to the CMX proxy away from the core Constellation 
 
 ## Configuration
 
-All configuration for CMXUtil is done in a configuration JSON file with the following parameters.
+All configuration for CMXUtil is done in a JSON file with the following parameters.
 
 | Key | Value |
 | --- | ----- |
